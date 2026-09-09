@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+      :root {
+  --background: #020617;
+  --foreground: #ededed;
+  --bg-main: #020617;
+  --text-main: #ffffff;
+  --d-admin-surface-ground: #020617;
+  --glass-bg: rgba(2, 6, 23, 0.85);
+  --glass-inner-bg: rgba(8, 10, 22, 0.9);
+  --glass-header-bg: rgba(2, 6, 23, 0.85);
+  --glass-sidebar-bg: #020617;
+  --accent-500: #6366f1;
+  --accent-400: #818cf8;
+  --accent-600: #4f46e5;
+  --accent-glow: rgba(99, 102, 241, 0.3);
+  --accent-subtle: rgba(99, 102, 241, 0.12);
+  --accent-border: rgba(99, 102, 241, 0.3);
+  --card-radius-sm: 2px;
+  --card-radius-base: 4px;
+  --card-radius-md: 6px;
+  --card-radius-lg: 8px;
+  --card-radius-xl: 12px;
+  --card-radius-2xl: 16px;
+  --card-radius-3xl: 24px;
+  --glass-blur-sm: 4px;
+  --glass-blur-md: 12px;
+  --glass-blur-lg: 16px;
+  --glass-blur-xl: 24px;
+  --glass-blur-2xl: 40px;
+  --glass-blur-3xl: 64px;
+  --vh: 7.78px;
+  --d-admin-primary-color: #6366f1;
+  --d-admin-text-color: #fff;
+  --d-admin-text-color-secondary: #cbd5e1;
+  --glass-border: #ffffff2e;
+  --glass-inner-border: #ffffff24;
+}
+      body {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      section, div[data-component-name] {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .builder-bg-layer, [data-sidebar-id*="background-"], [data-sidebar-id*="BACKGROUND-"] {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: -10 !important;
+        pointer-events: none !important;
+      }
+      body:has(.builder-bg-layer) > section,
+      body:has(.builder-bg-layer) > div > section,
+      body:has([data-sidebar-id*="background-"]) > section,
+      body:has([data-sidebar-id*="background-"]) > div > section {
+        background-color: transparent !important;
+      }
+
+      /* Light mode custom color rules */
+      html:not(.dark) [style*="--light-color"] { color: var(--light-color) !important; }
+      html:not(.dark) [style*="--light-bg"] { background-color: var(--light-bg) !important; }
+      html:not(.dark) [style*="--light-border"] { border-color: var(--light-border) !important; }
+
+      html:not(.dark) [style*="--light-hover-color"]:hover { color: var(--light-hover-color) !important; }
+      html:not(.dark) [style*="--light-hover-bg"]:hover { background-color: var(--light-hover-bg) !important; }
+      html:not(.dark) [style*="--light-hover-border"]:hover { border-color: var(--light-hover-border) !important; }
+
+      html:not(.dark) [style*="--light-active-color"]:active { color: var(--light-active-color) !important; }
+      html:not(.dark) [style*="--light-active-bg"]:active { background-color: var(--light-active-bg) !important; }
+      html:not(.dark) [style*="--light-active-border"]:active { border-color: var(--light-active-border) !important; }
+
+      /* Dark mode custom color rules */
+      html.dark [style*="--dark-color"] { color: var(--dark-color) !important; }
+      html.dark [style*="--dark-bg"] { background-color: var(--dark-bg) !important; }
+      html.dark [style*="--dark-border"] { border-color: var(--dark-border) !important; }
+
+      html.dark [style*="--dark-hover-color"]:hover { color: var(--dark-hover-color) !important; }
+      html.dark [style*="--dark-hover-bg"]:hover { background-color: var(--dark-hover-bg) !important; }
+      html.dark [style*="--dark-hover-border"]:hover { border-color: var(--dark-hover-border) !important; }
+
+      html.dark [style*="--dark-active-color"]:active { color: var(--dark-active-color) !important; }
+      html.dark [style*="--dark-active-bg"]:active { background-color: var(--dark-active-bg) !important; }
+      html.dark [style*="--dark-active-border"]:active { border-color: var(--dark-active-border) !important; }
+
+      /* Direct hover / active property fallbacks */
+      [style*="--hover-color"]:hover { color: var(--hover-color) !important; }
+      [style*="--hover-bg"]:hover { background-color: var(--hover-bg) !important; }
+      [style*="--hover-border"]:hover { border-color: var(--hover-border) !important; }
+      [style*="--active-bg"]:active { background-color: var(--active-bg) !important; }
+
+      /* Smooth transitions for interactive elements */
+      button, a, [role="button"], input[type="submit"], input[type="button"] {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+  
